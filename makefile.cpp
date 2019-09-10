@@ -111,10 +111,10 @@ It means that substitute pattern a with pattern b in string stored in variable x
 Makefiles commonly tell how to do a few other things besides compiling a program: for example, how to delete all 
 the object files and executables so that the directory is ‘clean’.
 
-/*You can use clean for other commands also apart from deleting files. For example:
+You can use clean for other commands also apart from deleting files. For example:
 clean: echo success
 
-WHen we type make clean in terminal, it prints success/*
+WHen we type make clean in terminal, it prints success
 
 PHONY TARGETS: 
 .PHONY : clean
@@ -153,18 +153,20 @@ AI.o: AI.c
 clean:
 	echo success
 
-So here, .DEFAULT specifies the recipe for those targets and prerequisites for whom recipe isn't defined in makefile. If recipe isn't defined, the make
+So here, .DEFAULT specifies the recipe for those targets and prerequisites for whom recipe isn't 
+	defined in makefile. If recipe isn't defined, the make
 command assumes the recipe specified in .DEFAULT to be the recipe for them
 
 10. If you want to use a nonstandard name for your makefile, you can specify the makefile name with the ‘-f’ or ‘--file’ option. 
 The arguments ‘-f name’ or ‘--file=name’ tell make to read the file name as the makefile. If you use more than one ‘-f’ or ‘--file’ option, 
-you can specify several makefiles. All the makefiles are effectively concatenated in the order specified. 
+you can specify several makefiles. All the makefiles are effectively concatenated in the order specified. https://docs.google.com/document/d/1QlsUx-QRNi9ErorrNs_7miLgjfSUXZ-RkMAcKBjVzrY/edit
 The default makefile names GNUmakefile, makefile and Makefile are not checked automatically if you specify ‘-f’ or ‘--file’.
 
 11. By default, running ‘make’ displays the commands being executed. To hide/silence them, use the ‘-s’ flag:
  make -s
 
-12. The default shell used by a makefile to run its recipes is ‘/bin/sh’ i.e. the Bourne shell. Change it to ‘/bin/bash’ (the Bourne Again shell) using MAKESHELL, a special variable: 
+12. The default shell used by a makefile to run its recipes is ‘/bin/sh’ i.e. the Bourne shell. Change it to ‘/bin/bash’ 
+(the Bourne Again shell) using MAKESHELL, a special variable: 
 MAKESHELL = /bin/bash
 
 13. Create a new directory include: mkdir include 
@@ -183,7 +185,8 @@ Further,  rules may then specify the names of files in the prerequisite list as 
 For example, foo.o : foo.c
  Shall be treated same as: foo.o : /dir1/foo.c 
 
- Even though foo.c doesn't exist in your current working directory, but is is there in dir1 (which has been included in our search using
+ Even though foo.c doesn't exist in your current working directory, but is is there in dir1 
+	 (which has been included in our search using
  VPATH variable)
 
 
